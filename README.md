@@ -1,6 +1,5 @@
-# Terraform with Local File and AWS Resources
+# Terraform with Local Files and AWS Resources
 
-## Overview
 
 This project demonstrates the use of Terraform to manage two different types of resources:
 1. **Local Resources**: Creates a local file on your machine using the `local_file` resource.
@@ -33,13 +32,13 @@ Before you begin, ensure you have the following installed on your system:
 Clone the GitHub repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/terraform-project.git
-cd terraform-project
+git clone https://github.com/jayanthchennamaneni/Terraform-with-Local-File-and-AWS-Resources.git
+cd Terraform-with-Local-File-and-AWS-Resources
 ```
 
-### Step 2: Set up Terraform
+### Step 2: Initialize the project
 
-Initialize the project: In the directory where your local_file.tf and aws.tf files are located, initialize Terraform to download necessary providers (AWS and local):
+In the directory where your local_file.tf and aws.tf files are located, initialize Terraform to download necessary providers (AWS and local):
 
 ```bash
 terraform init
@@ -60,14 +59,15 @@ To create the AWS resources, run:
 ```bash
 terraform apply
 ```
+Terraform will ask for confirmation. Type `yes` to proceed.
 
 ### Step 5: Verify
 
 After applying the configuration, you can check the following resources in the AWS console:
-    VPC: Check your newly created VPC in the VPC Dashboard.
-    EC2 Instance: Verify the running EC2 instance in the EC2 Dashboard.
-    S3 Bucket: Check the S3 bucket for file storage.
-    Load Balancer: Look at the Load Balancers section to confirm it was created.
+- `VPC:` Check your newly created VPC in the VPC Dashboard.
+- `EC2 Instance:` Verify the running EC2 instance in the EC2 Dashboard.
+- `S3 Bucket:` Check the S3 bucket for file storage.
+- `Load Balancer:` Look at the Load Balancers section to confirm it was created.
 
 ### Step 6: Destroy Resources
 
@@ -76,3 +76,10 @@ When you're done, it's good practice to clean up the resources. To destroy the A
 ```bash
 terraform destroy
 ```
+This will delete all the resources created by Terraform.
+
+#### Important Notes: AWS Costs
+
+Be aware that deploying AWS resources such as EC2, S3, and Load Balancers can incur costs. Make sure you monitor your AWS usage and destroy resources when no longer needed.
+
+---
